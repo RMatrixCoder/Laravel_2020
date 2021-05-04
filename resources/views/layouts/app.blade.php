@@ -7,26 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset("css/app.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset("css/style.css") }}" type="text/css"/>
 </head>
 <body class="bg-secondary">
 <nav class="p-3 bg-white d-flex justify-content-between align-items-center">
-    <ul class="d-flex flex-row">
-        <li>
+    <ul class="d-flex flex-row list-group">
+        <li class="list-group-item p-0 border-0">
             <a href="/" class="p-3 text-dark">Home</a>
         </li>
-        <li>
+        @role('admin')
+        <li class="list-group-item p-0 border-0">
             <a href="{{ route('dashboard') }}" class="p-3 text-dark">Dashboard</a>
         </li>
-        <li>
+        @endrole
+        <li class="list-group-item p-0 border-0">
             <a href="{{ route('posts') }}" class="p-3 text-dark">Post</a>
         </li>
     </ul>
-    <ul class="d-flex flex-row">
+    <ul class="d-flex flex-row list-group">
         @auth
-            <li>
+            <li class="list-group-item p-0 border-0">
                 <a href="" class="p-3 text-dark">{{ auth()->user()->name }}</a>
             </li>
-            <li>
+            <li class="list-group-item p-0 border-0">
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class="p-0 text-dark btn">Logout</button>
@@ -34,10 +37,10 @@
             </li>
         @endauth
         @guest
-            <li>
+            <li class="list-group-item p-0 border-0">
                 <a href="{{ route('login') }}" class="p-3 text-dark">Login</a>
             </li>
-            <li>
+            <li class="list-group-item p-0 border-0">
                 <a href="{{ route('register') }}" class="p-3 text-dark">Register</a>
             </li>
         @endguest

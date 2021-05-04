@@ -74,6 +74,9 @@ body {
   text-align: left;
   background-color: #f8fafc;
 }
+a{
+    text-decoration: none;
+}
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
@@ -10903,17 +10906,3 @@ a.text-dark:focus {
   }
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-a{
-    text-decoration: none !important;
-}
-ul{
-    list-style: none !important;
-}
-.pagination > .page-item.active > .page-link{
-    color:#ffffff !important;
-}
